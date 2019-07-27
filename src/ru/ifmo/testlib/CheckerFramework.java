@@ -37,8 +37,9 @@ public class CheckerFramework {
 
     private static HashMap<String, ResultAdapter> resultAdapters = new HashMap<>();
 
-    private static void registerResultAdapter(String id, ResultAdapter v) {
-        resultAdapters.put(id, v);
+    public static void registerResultAdapter(String id, ResultAdapter v) {
+        if (!resultAdapters.containsKey(id))
+            resultAdapters.put(id, v);
     }
 
     static {
